@@ -1,12 +1,16 @@
-# Ex.No:11 Develop a application to add animations to ImageView,Move,blink,fade,clockwise,zoom,slide operations are perform in android studio
+# Ex.No: 11 Develop a application to add animations to ImageView,Move,blink,fade,clockwise,zoom,slide operations are perform in android studio.
 
-### AIM:
+
+## AIM:
+
 To develop a application to add animation to imageview,move,blink,fade,clockwise,zoom,slide operation using Android Studio.
 
-### EQUIPMENTS REQUIRED:
-Latest Version Android Studio.
+## EQUIPMENTS REQUIRED:
 
-### ALGORITHM:
+Android Studio(Latest Version)
+
+## ALGORITHM:
+
 Step 1: Open Android Studio and then click on File -> New -> New project.
 
 Step 2: Then type the Application name as HelloWorld and click Next.
@@ -21,15 +25,15 @@ Step 6: Display message give in MainActivity file.
 
 Step 7: Save and run the application.
 
-### PROGRAM:
-
-Program to display animation operation.
-
-Developed by:V.R.VIJAY KUMAR
-
-Registeration Number :212221040178
-
-activity_main.xml
+## PROGRAM:
+```
+/*
+Program to display animation operation”.
+Developed by:BARATH.E
+Registeration Number : 212221040026
+*/
+```
+activity_main.xml:
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -49,7 +53,7 @@ activity_main.xml
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.199"
-        app:srcCompat="@drawable/rick" />
+        app:srcCompat="@drawable/shinchan" />
 
     <Button
         android:id="@+id/BTNblink"
@@ -135,9 +139,105 @@ activity_main.xml
         app:layout_constraintVertical_bias="0.772" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 ```
-MainActivity.java
+blink.xml:
 ```
-package com.example.animation;
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <alpha android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:duration="500"
+        android:repeatMode="reverse"
+        android:repeatCount="infinite"/>
+</set>
+```
+rotate.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <rotate
+        android:duration="6000"
+        android:fromDegrees="0"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:toDegrees="360" />
+
+    <rotate
+        android:duration="6000"
+        android:fromDegrees="360"
+        android:pivotX="50%"
+        android:pivotY="50%"
+        android:startOffset="5000"
+        android:toDegrees="0" />
+</set>
+```
+fade.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- duration is the time for which animation will work-->
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="0"
+        android:toAlpha="1" />
+    <alpha
+        android:duration="1000"
+        android:fromAlpha="1"
+        android:startOffset="2000"
+        android:toAlpha="0" />
+</set>
+```
+move.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <translate
+        android:fromXDelta="0%p"
+        android:toXDelta="75%p"
+        android:duration="700" />
+</set>
+```
+slide.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale
+        android:duration="500"
+        android:fromXScale="1.0"
+        android:fromYScale="1.0"
+        android:interpolator="@android:anim/linear_interpolator"
+        android:toXScale="1.0"
+        android:toYScale="0.0" />
+</set>
+```
+zoom.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android">
+    <scale xmlns:android="http://schemas.android.com/apk/res/android"
+        android:fromXScale="0.5"
+        android:toXScale="3.0"
+        android:fromYScale="0.5"
+        android:toYScale="3.0"
+        android:duration="1000"
+        android:pivotX="25%"
+        android:pivotY="25%" >
+    </scale>
+    <scale xmlns:android="http://schemas.android.com/apk/res/android"
+        android:startOffset="1000"
+        android:fromXScale="3.0"
+        android:toXScale="0.5"
+        android:fromYScale="3.0"
+        android:toYScale="0.5"
+        android:duration="1000"
+        android:pivotX="25%"
+        android:pivotY="25%" >
+    </scale>
+</set>
+```
+MainActivity.java:
+```
+package com.example.animations;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -223,107 +323,23 @@ public class MainActivity extends AppCompatActivity {
 
 }
 ```
-Blink.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <alpha android:fromAlpha="0.0"
-        android:toAlpha="1.0"
-        android:interpolator="@android:anim/accelerate_interpolator"
-        android:duration="500"
-        android:repeatMode="reverse"
-        android:repeatCount="infinite"/>
-</set>
-```
-Fade.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <!-- duration is the time for which animation will work-->
-    <alpha
-        android:duration="1000"
-        android:fromAlpha="0"
-        android:toAlpha="1" />
-    <alpha
-        android:duration="1000"
-        android:fromAlpha="1"
-        android:startOffset="2000"
-        android:toAlpha="0" />
-</set>
-```
-Move.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <translate
-        android:fromXDelta="0%p"
-        android:toXDelta="75%p"
-        android:duration="700" />
-</set>
-```
-Rotate.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <rotate
-        android:duration="6000"
-        android:fromDegrees="0"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:toDegrees="360" />
+## OUTPUT
 
-    <rotate
-        android:duration="6000"
-        android:fromDegrees="360"
-        android:pivotX="50%"
-        android:pivotY="50%"
-        android:startOffset="5000"
-        android:toDegrees="0" />
-</set>
-```
-Slide.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale
-        android:duration="500"
-        android:fromXScale="1.0"
-        android:fromYScale="1.0"
-        android:interpolator="@android:anim/linear_interpolator"
-        android:toXScale="1.0"
-        android:toYScale="0.0" />
-</set>
-```
-Zoom.xml
-```
-<?xml version="1.0" encoding="utf-8"?>
-<set xmlns:android="http://schemas.android.com/apk/res/android">
-    <scale xmlns:android="http://schemas.android.com/apk/res/android"
-        android:fromXScale="0.5"
-        android:toXScale="3.0"
-        android:fromYScale="0.5"
-        android:toYScale="3.0"
-        android:duration="1000"
-        android:pivotX="25%"
-        android:pivotY="25%" >
-    </scale>
-    <scale xmlns:android="http://schemas.android.com/apk/res/android"
-        android:startOffset="1000"
-        android:fromXScale="3.0"
-        android:toXScale="0.5"
-        android:fromYScale="3.0"
-        android:toYScale="0.5"
-        android:duration="1000"
-        android:pivotX="25%"
-        android:pivotY="25%" >
-    </scale>
-</set>
-```
+Code With Emulator:
+![Screenshot (195)](https://github.com/Vasanth1234567/Mobile-Application-Development/assets/86919099/17f1c2db-3149-4e65-addd-c0494119f7ea)
 
-### OUTPUT:
-![](https://github.com/KATHIR1611/MAD--11/blob/main/ui%203.png)
-![](https://github.com/KATHIR1611/MAD--11/blob/main/ui%204.png)
+Rotate:
+![Screenshot (196)](https://github.com/Vasanth1234567/Mobile-Application-Development/assets/86919099/f21ff649-7259-4e6d-9d4d-25b6253b5ff7)
 
-### RESULT:
+Zoom:
+![Screenshot (197)](https://github.com/Vasanth1234567/Mobile-Application-Development/assets/86919099/ac5605aa-edd6-481c-a9fb-db239d908c01)
 
+Move:
+![Screenshot (198)](https://github.com/Vasanth1234567/Mobile-Application-Development/assets/86919099/ff17223a-068b-4bc6-979b-487c48baa20a)
+
+Fade:
+![Screenshot (199)](https://github.com/Vasanth1234567/Mobile-Application-Development/assets/86919099/f44b3044-f004-43ae-9dd7-9271923ab18d)
+
+
+## RESULT
 Thus, to develop a application to add animation to imageview,move,blink,fade,clockwise,zoom,slide operation using Android Studio has been executed successfully.
