@@ -29,7 +29,7 @@ Step 7: Save and run the application.
 ```
 /*
 Program to display animation operation”.
-Developed by: Mugilan P
+Developed by: MUGILAN P
 Registeration Number : 212221040107
 */
 ```
