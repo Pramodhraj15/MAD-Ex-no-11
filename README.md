@@ -30,7 +30,7 @@ Step 7: Save and run the application.
 /*
 Program to display animation operation”.
 Developed by: MUGILAN P
-Registeration Number : 212221040107
+Registration Number : 212221040107
 */
 ```
 activity_main.xml:
